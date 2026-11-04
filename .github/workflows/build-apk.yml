@@ -35,6 +35,8 @@ jobs:
 
       - name: Generate launcher icons from public/icon-512.png
         run: |
+          sudo apt-get update -y
+          sudo apt-get install -y imagemagick
           RES=android/app/src/main/res
           rm -rf $RES/mipmap-anydpi-v26
           for d in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
